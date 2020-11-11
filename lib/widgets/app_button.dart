@@ -12,6 +12,7 @@ class AppButton extends StatelessWidget {
     return Container(
       height: 50,
       child: RaisedButton(
+        key: Key(text),
         color: Colors.blue,
         onPressed: onPressed,
         child: Text(

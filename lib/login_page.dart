@@ -32,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           Center(
             child: Text(
               "App Flutter",
+              key: Key('title'),
               style: TextStyle(
                 fontSize: 30,
                 color: Colors.blue,
@@ -40,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           Text(
             "Login",
+             key: Key('login'),
             style: TextStyle(
               fontSize: 20,
               color: Colors.red,
@@ -47,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           TextFormField(
             controller: tLogin,
+            key: Key('tlogin'),
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(
@@ -59,12 +62,14 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 20,),
           Text(
             "Senha",
+            key: Key('senha'),
             style: TextStyle(
               fontSize: 20,
               color: Colors.green,
             ),
           ),
           TextFormField(
+            key: Key('tsenha'),
             controller: tSenha,
             obscureText: true,
           ),
