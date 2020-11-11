@@ -22,9 +22,9 @@ void main() {
     });
 
     test('teste', () async {
-        // final title = find.byValueKey('title');
-        //
-        // expect(await driver.getText(title),"Teste");
+        final title = find.byValueKey('title');
+
+        expect(await driver.getText(title),"Teste");
     });
 
 

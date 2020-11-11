@@ -9,3 +9,5 @@ void main() {
   // any widget you are interested in testing.
   app.main();
 }
+
+//flutter drive --target=test_driver/app.dart
