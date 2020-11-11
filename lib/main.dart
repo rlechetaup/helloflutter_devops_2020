@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'login_page.dart';
-
+import 'package:flutter_helloup/login_page.dart';
 
 void main() {
   runApp(MyApp());

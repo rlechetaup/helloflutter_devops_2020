@@ -7,6 +7,7 @@ void main() {
 
     // final counterTextFinder = find.byValueKey('counter');
     // final buttonFinder = find.byValueKey('increment');
+    // expect(await driver.getText(tLogin), "");
 
     FlutterDriver driver;
 
@@ -21,7 +22,9 @@ void main() {
     });
 
     test('teste', () async {
-
+        // final title = find.byValueKey('title');
+        //
+        // expect(await driver.getText(title),"Teste");
     });
 
 
