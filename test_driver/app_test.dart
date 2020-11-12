@@ -5,10 +5,6 @@ import 'package:test/test.dart';
 
 void main() {
   group('Teste', () {
-    // final counterTextFinder = find.byValueKey('counter');
-    // final buttonFinder = find.byValueKey('increment');
-    // expect(await driver.getText(tLogin), "");
-
     FlutterDriver driver;
 
     setUpAll(() async {
