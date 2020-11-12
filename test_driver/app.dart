@@ -1,32 +1,13 @@
-// Imports the Flutter Driver API.
-import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
+import 'package:flutter_driver/driver_extension.dart';
+import 'package:flutter_helloup/main.dart' as app;
 
 void main() {
-  group('Teste', () {
+  // This line enables the extension.
+  enableFlutterDriverExtension();
 
-    // final counterTextFinder = find.byValueKey('counter');
-    // final buttonFinder = find.byValueKey('increment');
-    // expect(await driver.getText(tLogin), "");
-
-    FlutterDriver driver;
-
-    setUpAll(() async {
-      driver = await FlutterDriver.connect();
-    });
-
-    tearDownAll(() async {
-      if (driver != null) {
-        driver.close();
-      }
-    });
-
-    test('teste', () async {
-        final title = find.byValueKey('title');
-
-        expect(await driver.getText(title),"Teste");
-    });
-
-
-  });
+  // Call the `main()` function of the app, or call `runApp` with
+  // any widget you are interested in testing.
+  app.main();
 }
+
+//flutter drive --target=test_driver/app.dart

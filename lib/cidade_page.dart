@@ -10,7 +10,10 @@ class CidadePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(cidade.nome),
+        title: Text(
+          cidade.nome,
+          key: Key('appBar'),
+        ),
       ),
       body: _body(),
     );

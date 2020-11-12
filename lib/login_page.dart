@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           TextFormField(
             controller: tLogin,
-            key: Key('tlogin'),
+            key: Key('tLogin'),
             decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(
@@ -62,14 +62,13 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 20,),
           Text(
             "Senha",
-            key: Key('senha'),
             style: TextStyle(
               fontSize: 20,
               color: Colors.green,
             ),
           ),
           TextFormField(
-            key: Key('tsenha'),
+            key: Key('tSenha'),
             controller: tSenha,
             obscureText: true,
           ),

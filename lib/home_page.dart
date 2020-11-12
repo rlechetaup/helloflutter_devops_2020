@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   _init() async {
     list = await CidadeService().getCidades();
-    setState(()  {});
+    setState(() {});
   }
 
   @override
@@ -31,7 +31,10 @@ class _HomePageState extends State<HomePage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Cidades"),
+          title: Text(
+            "Cidades",
+            key: Key('appBar'),
+          ),
         ),
         body: _body(),
         drawer: DrawerList(),
@@ -40,45 +43,48 @@ class _HomePageState extends State<HomePage> {
   }
 
   _body() {
-
     return _listView(list);
   }
 
   _listView(List<Cidade> list) {
-
-    if(list == null) {
+    if (list == null) {
       return Center(
         child: CircularProgressIndicator(),
       );
     }
 
-    return ListView.builder(
-      itemCount: list != null ? list.length : 0,
-      itemBuilder: (_, int index) {
-        Cidade cidade = list[index];
+    return Container(
+      padding: EdgeInsets.all(16),
+      child: ListView.builder(
+        key: Key('listView'),
+        itemCount: list != null ? list.length : 0,
+        itemBuilder: (_, int index) {
+          Cidade cidade = list[index];
 
-        return GestureDetector(
-          onTap: () => _onClickCidade(cidade),
-          child: Container(
-            height: 300,
-            child: Column(
-              children: [
-                Text(
-                  cidade.nome,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.blue,
+          return GestureDetector(
+            onTap: () => _onClickCidade(cidade),
+            child: Container(
+              // height: 300,
+              child: Column(
+                children: [
+                  Text(
+                    cidade.nome,
+                    key: Key("listItem_$index"),
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.blue,
+                    ),
                   ),
-                ),
-                Container(
-                  child: Image.network(cidade.urlFoto),
-                ),
-
-              ],
+                  Image.network(cidade.urlFoto),
+                  SizedBox(
+                    height: 20,
+                  )
+                ],
+              ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 

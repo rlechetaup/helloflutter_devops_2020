@@ -9,7 +9,8 @@ class DrawerList extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                child: Image.network("https://e7.pngegg.com/pngimages/758/928/png-clipart-computer-icons-user-profile-theater-front-face-monochrome.png"),
+                child: Image.network(
+                    "https://e7.pngegg.com/pngimages/758/928/png-clipart-computer-icons-user-profile-theater-front-face-monochrome.png"),
               ),
               accountName: Text("Ricardo"),
               accountEmail: Text("rlecheta@gmail.com"),
@@ -33,13 +34,25 @@ class DrawerList extends StatelessWidget {
               trailing: Icon(Icons.arrow_right),
             ),
             ListTile(
-              title: Text("Sair"),
+              title: Text(
+                "Sair",
+                key: Key('Sair'),
+              ),
               leading: Icon(Icons.help),
               trailing: Icon(Icons.arrow_right),
+              onTap: () {
+                _onClickLogout(context);
+              },
             )
           ],
         ),
       ),
     );
+  }
+
+  void _onClickLogout(context) {
+    // Fecha o drawer e a tela.
+    Navigator.pop(context);
+    Navigator.pop(context);
   }
 }
