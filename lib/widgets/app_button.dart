@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-  Function onPressed;
-  String text;
+  final Function onPressed;
+  final String text;
 
   AppButton(this.text,this.onPressed);
 

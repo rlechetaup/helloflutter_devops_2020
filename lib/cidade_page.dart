@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_helloup/cidade.dart';
 
 class CidadePage extends StatelessWidget {
-  Cidade cidade;
+  final Cidade cidade;
 
   CidadePage(this.cidade);
 

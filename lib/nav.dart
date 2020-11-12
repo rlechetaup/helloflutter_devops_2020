@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 Future push(BuildContext context,Widget page, {bool replace = false}) {
   if(replace) {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+    return Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
       return page;
     }));
   } else {
-    Navigator.push(context, MaterialPageRoute(builder: (context){
+    return Navigator.push(context, MaterialPageRoute(builder: (context){
       return page;
     }));
   }
